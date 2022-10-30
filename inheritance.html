@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="">
+    <title>JS Class Inheritance</title>
+</head>
+<body>
+
+    <script>
+        class Person {
+            constructor (fname, lname, birthday) {
+                this.fname = fname;
+                this.lname = lname;
+                this.dob = birthday;
+            }
+
+            greeting () {
+                console.log(`Hello: ${this.fname} ${this.lname}`)
+            }
+        }
+
+
+        class Customer extends Person {
+            constructor (fname, lname, birthday, phone, membership) {
+                super(fname, lname, birthday);
+                
+                this.phone = phone;
+                this.membership = membership;
+            }
+
+
+            fullname () {
+                console.log(`Your name is: ${this.fname} ${this.lname}`)
+            }
+
+        }
+
+
+
+        let person1 = new Person("Fazle", "Rahat", "11-13-1988");                          
+        // person1.greeting();
+
+
+        let customer1 = new Customer("Surjho", "Mukhi", "11-13-1988", "+88017150258923", "125")
+        let customer2 = new Customer("Moktar", "Hossain", "06-05-1978", "+880177778888", "1234");
+        let customer3 = new Customer("Rony", "Chy", "06-05-1978", "+8801715025650", "2356");
+
+        customer1.greeting();
+        customer3.fullname();
+
+
+
+    </script>
+
+    
+</body>
+</html>
