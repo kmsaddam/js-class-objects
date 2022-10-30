@@ -13,25 +13,38 @@
             constructor (fname, lname, birthday) {
                 this.fname = fname;
                 this.lname = lname;
-                this.birthday = birthday;
+                this.dob = birthday;
             }
 
 
             fullname () {
                 console.log(`Your name is: ${this.fname} ${this.lname}`)
             }
+
+            calculateAge () {
+                let birthday = new Date(this.dob);
+                let diff = Date.now() - birthday.getTime();
+                let ageDate = new Date(diff);
+                return Math.abs(ageDate.getUTCFullYear() - 1970);
+            }
         }
 
 
 
 
-        let person1 = new Person("Iqbal", "Hasan", "20-12-1988");
-        let person2 = new Person("Motaleb", "Khondaker", "12-10-1996");
-        let person3 = new Person("Nashir", "Sheikh", "03-04-1985");
+        let person1 = new Person("Fazle", "Rahat", "11-13-1988"); 
+        let person2 = new Person("Moinul", "Islam", "02-11-1991");
+        let person3 = new Person("Rony", "Chy", "01-17-1996");
+        
 
         console.log(person1.fullname());                           
         console.log(person2.fullname());                           
-        console.log(person2.fullname());                           
+        console.log(person2.fullname()); 
+        
+        
+        console.log(person1.calculateAge());                           
+        console.log(person2.calculateAge());                           
+        console.log(person2.calculateAge());
 
         
         // console.log(person1); 
