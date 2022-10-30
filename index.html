@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\
-    , initial-scale=1.0">
+    <meta name="viewport" content="">
     <title>JS Class Objects</title>
 </head>
 <body>
+
+    <script>
+        class Person {
+            constructor (fname, lname, birthday) {
+                this.fname = fname;
+                this.lname = lname;
+                this.birthday = birthday;
+            }
+
+
+            fullname () {
+                console.log(`Your name is: ${this.fname} ${this.lname}`)
+            }
+        }
+
+
+
+
+        let person1 = new Person("Iqbal", "Hasan", "20-12-1988");
+        let person2 = new Person("Motaleb", "Khondaker", "12-10-1996");
+        let person3 = new Person("Nashir", "Sheikh", "03-04-1985");
+
+        console.log(person1.fullname());                           
+        console.log(person2.fullname());                           
+        console.log(person2.fullname());                           
+
+        
+        // console.log(person1); 
+        // console.log(person2);  
+        // console.log(person3);   
+
+        person1.fullname()
+    </script>
+
     
 </body>
 </html>
